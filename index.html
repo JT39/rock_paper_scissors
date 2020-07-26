@@ -7,6 +7,11 @@
 <body>
 
     <script>
+        let wins = 0;
+        let loss = 0;
+        const playSelection = prompt("Enter Rock, Paper or Scissor:");
+        const computerSelection = computerPlay();
+
         function computerPlay() {
             if (Math.random() <= (1 / 3)) {
                 return 'rock';
@@ -15,17 +20,11 @@
             } else {
                 return 'scissor'
             }
-
         }
-        let wins = 0;
-        let loss = 0;
-
-        const playSelection = prompt("Enter Rock, Paper or Scissor:");
-        const computerSelection = computerPlay();
 
         function playRound(playSelection, computerSelection) {
             if ((playSelection.toLowerCase() === 'rock') && computerSelection === 'paper') {
-                console.log("You lose! Paper beats Rock");
+                console.log("You Lose! Paper beats Rock");
                 loss++;
 
             } else if (playSelection.toLowerCase() === 'rock' && computerSelection === 'scissor') {
@@ -50,12 +49,10 @@
 
             } else {
                 console.log("It's a tie! Try again!");
-            }
-             
+            }    
         }
 
         console.log(playRound(playSelection, computerSelection));
-
 
         function game() {
             wins = 0;
@@ -74,10 +71,6 @@
                 console.log("It's a tie."));
         }
 
-        
-    
-
     </script>
-
 </body>
 </html>
